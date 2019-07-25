@@ -29,6 +29,8 @@ Route::post('/landing/', static function (\Illuminate\Http\Request $request) {
             $request->post('trade') !== null
         ]
     );
+
+    return view('thanks');
 });
 
 Route::post('register', 'Auth\RegisterController@register');
