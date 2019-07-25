@@ -6,7 +6,7 @@
         <div class="body">
             <label>Name: <input v-model="name"></label>
             <label>Email: <input v-model="email"/></label>
-            <label>Password: <input type="password" v-model="password"/></label>
+            <label>Password: <input placeholder="Must be 8 characters" type="password" v-model="password"/></label>
         </div>
         <div class="footer">
             <div class="cancel button" @click="$emit('close')">Cancel</div>

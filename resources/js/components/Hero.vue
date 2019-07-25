@@ -1,7 +1,7 @@
 <template>
     <div class="hero">
         <div class="title m-b-md">
-            Sugar
+            Sugar Share
         </div>
         <div>
             Share your pantry with your neighbors.

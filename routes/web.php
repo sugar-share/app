@@ -16,6 +16,20 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', static function () {
     return view('home');
 });
+Route::get('/landing/', static function () {
+    return view('landing');
+});
+Route::post('/landing/', static function (\Illuminate\Http\Request $request) {
+    \Illuminate\Support\Facades\DB::insert(
+        'INSERT INTO adopters(email, buy, sell, trade) VALUES (?, ?, ?, ?)',
+        [
+            $request->post('email'),
+            $request->post('buy'),
+            $request->post('sell'),
+            $request->post('trade')
+        ]
+    );
+});
 
 Route::post('register', 'Auth\RegisterController@register');
 Route::post('login', 'Auth\LoginController@login');
