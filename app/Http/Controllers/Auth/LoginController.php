@@ -41,7 +41,8 @@ class LoginController extends Controller
 
     protected function authenticated(Request $request, $user)
     {
-        Log::debug('Authenticated the User.');
-        return response()->json($user);
+        return response()->json([
+                'user' => $user]
+        );
     }
 }

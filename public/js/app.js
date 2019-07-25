@@ -1876,10 +1876,21 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "hero",
+  name: "TopNavigation",
+  data: function data() {
+    return {
+      user: undefined
+    };
+  },
   methods: {
     showRegistration: function showRegistration() {
       this.$modal.show(_modals_RegisterModal__WEBPACK_IMPORTED_MODULE_0__["default"], {}, {
@@ -1894,6 +1905,10 @@ __webpack_require__.r(__webpack_exports__);
         height: 'auto',
         clickToClose: false
       });
+    },
+    logIn: function logIn(event) {
+      console.log('event', event);
+      this.user = event;
     }
   }
 });
@@ -1942,7 +1957,13 @@ __webpack_require__.r(__webpack_exports__);
       window.axios.post('/login/', {
         email: this.email,
         password: this.password
-      }).then(function () {
+      }).then(function (response) {
+        if (response.data.user) {
+          _this.$emit('logged-in', response.data.user);
+        } else {
+          console.error(response);
+        }
+
         _this.$emit('close');
       });
     }
@@ -2002,7 +2023,11 @@ __webpack_require__.r(__webpack_exports__);
         email: this.email,
         password: this.password,
         password_confirmation: this.password
-      }).then(function () {
+      }).then(function (response) {
+        if (response.data.user) {
+          _this.$emit('logged-in', response.data.user);
+        }
+
         _this.$emit('close');
       });
     }
@@ -38053,15 +38078,28 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "top-right links" }, [
-    _c("a", { attrs: { href: "#" }, on: { click: _vm.showRegistration } }, [
-      _vm._v("Start Sharing")
-    ]),
-    _vm._v(" "),
-    _c("a", { attrs: { href: "#" }, on: { click: _vm.showLogin } }, [
-      _vm._v("Keep Sharing")
-    ])
-  ])
+  return _c(
+    "div",
+    { staticClass: "top-right links", on: { "logged-in": _vm.logIn } },
+    [
+      !this.user
+        ? [
+            _c(
+              "a",
+              { attrs: { href: "#" }, on: { click: _vm.showRegistration } },
+              [_vm._v("Start Sharing")]
+            ),
+            _vm._v(" "),
+            _c("a", { attrs: { href: "#" }, on: { click: _vm.showLogin } }, [
+              _vm._v("Keep Sharing")
+            ])
+          ]
+        : [_vm._v("\n        " + _vm._s(_vm.user.name) + "\n    ")],
+      _vm._v(" "),
+      _c("modals-container", { on: { "logged-in": _vm.logIn } })
+    ],
+    2
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -50494,7 +50532,7 @@ files.keys().map(function (key) {
 });
 Vue.use(vue_js_modal__WEBPACK_IMPORTED_MODULE_0___default.a, {
   dynamic: true,
-  injectModalsContainer: true
+  injectModalsContainer: false
 });
 /**
  * Next, we will create a fresh Vue application instance and attach it to

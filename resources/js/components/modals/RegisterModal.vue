@@ -40,7 +40,10 @@
                     email: this.email,
                     password: this.password,
                     password_confirmation: this.password
-                }).then(() => {
+                }).then((response) => {
+                    if (response.data.user) {
+                        this.$emit('logged-in', response.data.user)
+                    }
                     this.$emit('close');
                 });
             },

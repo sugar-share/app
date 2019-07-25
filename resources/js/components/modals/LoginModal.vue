@@ -31,7 +31,12 @@
                 window.axios.post('/login/', {
                     email: this.email,
                     password: this.password
-                }).then(() => {
+                }).then((response) => {
+                    if (response.data.user) {
+                        this.$emit('logged-in', response.data.user)
+                    } else {
+                        console.error(response);
+                    }
                     this.$emit('close');
                 });
             },

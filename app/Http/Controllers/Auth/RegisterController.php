@@ -7,7 +7,6 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
@@ -75,7 +74,8 @@ class RegisterController extends Controller
 
     protected function registered(Request $request, $user): JsonResponse
     {
-        Log::debug('Registered the User.');
-        return response()->json($user);
+        return response()->json([
+            'user' => $user
+        ]);
     }
 }

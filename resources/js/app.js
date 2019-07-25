@@ -20,7 +20,7 @@ import VModal from 'vue-js-modal';
 const files = require.context('./', true, /\.vue$/i);
 files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
 
-Vue.use(VModal, {dynamic: true, injectModalsContainer: true});
+Vue.use(VModal, {dynamic: true, injectModalsContainer: false});
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
