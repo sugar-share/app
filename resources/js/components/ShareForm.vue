@@ -7,9 +7,12 @@
             <label>Condition: <select v-if="conditions.length" v-model="item.condition">
                 <option v-for="condition in conditions" :value="condition.id">{{ condition.name }}</option>
             </select><i v-else class="fas fa-circle-notch fa-spin"></i></label>
-            <sugar-input v-model="item.category">
-                <template slot="label">Category</template>
-            </sugar-input>
+<!--            <sugar-input v-model="item.category">-->
+<!--                <template slot="label">Category</template>-->
+<!--            </sugar-input>-->
+            <sugar-input v-model="item.price"><template slot="label">Price</template></sugar-input>
+            <label>Will Trade: <input type="checkbox" v-model="item.will_trade"></label><br>
+            <label>Free: <input type="checkbox" v-model="item.free"></label>
         </div>
         <div>
             <button class="btn" @click="share">Share</button>
@@ -18,6 +21,7 @@
 </template>
 
 <script>
+    import SugarInput from "./SugarInput";
     export default {
         name: "ShareForm",
         data() {
@@ -43,6 +47,7 @@
             }
         },
         components: {
+            SugarInput,
             'suger-input': (resolve) => {
                 require(['./SugarInput'], resolve)
             },

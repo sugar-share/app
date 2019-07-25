@@ -11,6 +11,9 @@ class Good extends Model
 {
     protected $fillable = [
         'description',
+        'will_trade',
+        'price',
+        'free'
     ];
 
     public function user(): BelongsTo
