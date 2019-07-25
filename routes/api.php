@@ -19,3 +19,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('/user/{user}', 'Api\UserController@read');
+Route::get('/conditions/', 'Api\ConditionController@index');
