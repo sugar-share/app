@@ -3,6 +3,7 @@
 @section('content')
     <div class="flex-center">
         <form method="POST">
+            @csrf
             <div>
                 Hey, wanna hear more? Awesome.
             </div>
@@ -19,7 +20,7 @@
                 <label>How can we get in touch to help? <input type="email" name="email"></label>
             </div>
             <div>
-                <button type="submit">We'll Let You Know</button>
+                <button class="btn" type="submit">We'll Let You Know</button>
             </div>
         </form>
     </div>
