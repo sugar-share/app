@@ -24,9 +24,9 @@ Route::post('/landing/', static function (\Illuminate\Http\Request $request) {
         'INSERT INTO adopters(email, buy, sell, trade) VALUES (?, ?, ?, ?)',
         [
             $request->post('email') ?? '',
-            $request->post('buy') ?? '',
-            $request->post('sell') ?? '',
-            $request->post('trade') ?? ''
+            $request->post('buy') !== null,
+            $request->post('sell') !== null,
+            $request->post('trade') !== null
         ]
     );
 });
