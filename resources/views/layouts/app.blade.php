@@ -15,13 +15,15 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/f63b78ac90.js"></script>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
 <div>
-    <main id="app">
+    <main class="content" id="app">
+        <top-navigation :initial-user="{{ \Illuminate\Support\Facades\Auth::user() ?? 'null' }}"></top-navigation>
         @yield('content')
     </main>
 </div>

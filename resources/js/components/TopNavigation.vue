@@ -1,13 +1,13 @@
 <template>
     <div class="top-right links" v-on:logged-in="logIn">
         <template v-if="!this.user">
-        <a href="#" @click="showRegistration">Start Sharing</a>
-        <a href="#" @click="showLogin">Keep Sharing</a>
+            <a href="#" @click="showRegistration">Start Sharing</a>
+            <a href="#" @click="showLogin">Keep Sharing</a>
         </template>
         <template v-else>
-            {{ user.name }}
+            <a :href="'/profile/' + user.id">{{ user.name }}</a>
         </template>
-        <modals-container v-on:logged-in="logIn"/>
+        <modals-container v-on:logged-in="logIn"></modals-container>
     </div>
 </template>
 
@@ -17,6 +17,14 @@
 
     export default {
         name: "TopNavigation",
+        props: {
+            initialUser: {
+                type: Object,
+                default: () => {
+                    return {};
+                }
+            }
+        },
         data: () => {
             return {
                 user: undefined,
@@ -46,7 +54,6 @@
                 )
             },
             logIn(event) {
-                console.log('event', event);
                 this.user = event;
             }
         }
