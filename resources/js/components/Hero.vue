@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="hero">
         <div class="title m-b-md">
             Sugar
         </div>
@@ -19,5 +19,7 @@
 </script>
 
 <style scoped>
-
+div.hero {
+    padding-bottom: 5rem;
+}
 </style>

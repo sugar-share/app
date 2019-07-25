@@ -37,7 +37,9 @@
                 window.axios.post(
                     '/api/goods/',
                     this.item
-                );
+                ).then((response) => {
+                    window.location = '/home';
+                });
             }
         },
         components: {
