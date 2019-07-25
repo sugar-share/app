@@ -40,6 +40,13 @@ html, body {
     text-align: center;
 }
 
+.btn {
+    border: 1px solid black;
+    -webkit-border-radius: 0.25rem;
+    -moz-border-radius: 0.25rem;
+    border-radius: 0.25rem;
+}
+
 .container {
     text-align: center;
     padding: 3rem;

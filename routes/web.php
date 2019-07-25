@@ -23,3 +23,4 @@ Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/profile/{user}', 'ProfileController@view');
+Route::get('/share/', 'ShareController@post');

@@ -10678,6 +10678,11 @@ body {
   text-align: center;
 }
 
+.btn {
+  border: 1px solid black;
+  border-radius: 0.25rem;
+}
+
 .container {
   text-align: center;
   padding: 3rem;
