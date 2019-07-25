@@ -22,8 +22,8 @@
 </head>
 <body>
 <div>
-    <main class="content" id="app">
-        <top-navigation :initial-user="{{ \Illuminate\Support\Facades\Auth::user() ?? 'null' }}"></top-navigation>
+    <main class="container" id="app">
+        <top-navigation :initial-user="{{ auth()->user() ?? 'undefined' }}"></top-navigation>
         @yield('content')
     </main>
 </div>

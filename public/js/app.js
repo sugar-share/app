@@ -1998,6 +1998,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2012,7 +2013,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      user: undefined
+      user: this.initialUser
     };
   },
   methods: {
@@ -38412,7 +38413,7 @@ var render = function() {
     "div",
     { staticClass: "top-right links", on: { "logged-in": _vm.logIn } },
     [
-      !this.user
+      !_vm.user.id
         ? [
             _c(
               "a",
@@ -38425,6 +38426,8 @@ var render = function() {
             ])
           ]
         : [
+            _c("a", { attrs: { href: "/share/" } }, [_vm._v("Share")]),
+            _vm._v(" "),
             _c("a", { attrs: { href: "/profile/" + _vm.user.id } }, [
               _vm._v(_vm._s(_vm.user.name))
             ])

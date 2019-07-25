@@ -1,10 +1,11 @@
 <template>
     <div class="top-right links" v-on:logged-in="logIn">
-        <template v-if="!this.user">
+        <template v-if="!user.id">
             <a href="#" @click="showRegistration">Start Sharing</a>
             <a href="#" @click="showLogin">Keep Sharing</a>
         </template>
         <template v-else>
+            <a href="/share/">Share</a>
             <a :href="'/profile/' + user.id">{{ user.name }}</a>
         </template>
         <modals-container v-on:logged-in="logIn"></modals-container>
@@ -25,9 +26,9 @@
                 }
             }
         },
-        data: () => {
+        data() {
             return {
-                user: undefined,
+                user: this.initialUser,
             }
         },
         methods: {
