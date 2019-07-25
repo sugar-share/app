@@ -23,10 +23,10 @@ Route::post('/landing/', static function (\Illuminate\Http\Request $request) {
     \Illuminate\Support\Facades\DB::insert(
         'INSERT INTO adopters(email, buy, sell, trade) VALUES (?, ?, ?, ?)',
         [
-            $request->post('email'),
-            $request->post('buy'),
-            $request->post('sell'),
-            $request->post('trade')
+            $request->post('email') ?? '',
+            $request->post('buy') ?? '',
+            $request->post('sell') ?? '',
+            $request->post('trade') ?? ''
         ]
     );
 });
