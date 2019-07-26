@@ -4,7 +4,7 @@
         <div class="card-body">
             <h5 class="card-title">{{ item.description }}</h5>
             <div class="card-text">
-                <div>Condition {{ item.condition.name }}</div>
+<!--                <div>Condition {{ item.condition.name }}</div>-->
                 <div>
                     <div v-if="item.price" class="float-right small">
                         <i class="fas fa-comment-dollar"></i> {{ item.price }}

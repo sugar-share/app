@@ -1,28 +1,37 @@
 <template>
     <div>
-        <div class="title">List Unwanted Goods</div>
+        <div class="title">Post Your Food</div>
         <div class="form-group">
-            <label for="item_photo">Upload an Image</label>
-            <input type="file" class="form-control-file" id="item_photo">
+            <div class="row">
+                <label class="col" for="item_photo">Upload an Image</label>
+                <input type="file" class="form-control-file col" id="item_photo">
+            </div>
 
-            <sugar-input v-model="item.description">
-                <template slot="label">Description</template>
-                <textarea slot="input"></textarea>
-            </sugar-input>
-            <label>Condition: <select v-if="conditions.length" v-model="item.condition">
-                <option v-for="condition in conditions" :value="condition.id">{{ condition.name }}</option>
-            </select><i v-else class="fas fa-circle-notch fa-spin"></i></label>
+            <div class="row">
+                <label class="col" for="description">Enter a Description of Product</label>
+                <textarea class="col" id="description"></textarea>
+            </div>
+            <!--            <label>Condition: <select v-if="conditions.length" v-model="item.condition">-->
+            <!--                <option v-for="condition in conditions" :value="condition.id">{{ condition.name }}</option>-->
+            <!--            </select><i v-else class="fas fa-circle-notch fa-spin"></i></label>-->
             <!--            <sugar-input v-model="item.category">-->
             <!--                <template slot="label">Category</template>-->
             <!--            </sugar-input>-->
-            <sugar-input v-model="item.price">
-                <template slot="label">Price</template>
-            </sugar-input>
-            <label>Will Trade: <input type="checkbox" v-model="item.will_trade"></label><br>
-            <label>Free: <input type="checkbox" v-model="item.free"></label>
-        </div>
-        <div>
-            <button class="btn" @click="share">Share</button>
+            <div class="row">
+                <label class="col" for="price">Choose Your Price</label>
+                <div class="col" style="text-align: left;">
+                    <input id="price" name="price">
+                    <label>or Set as Free: <input type="checkbox" v-model="item.free"></label>
+                </div>
+
+            </div>
+            <div class="row">
+                <label for="trades" class="col">Will Accepts Trades </label>
+                <input id="trades" class="col" type="checkbox" v-model="item.will_trade">
+            </div>
+            <div>
+                <button class="btn" @click="share">Share</button>
+            </div>
         </div>
     </div>
 </template>
@@ -64,8 +73,17 @@
 </script>
 
 <style scoped>
-.form-control-file {
-    width: unset;
-    display: inline;
-}
+    .form-control-file {
+        width: unset;
+        display: inline;
+    }
+
+    .row {
+        padding-bottom: 1rem;
+    }
+
+    .col {
+        padding: 0;
+        text-align: left;
+    }
 </style>
