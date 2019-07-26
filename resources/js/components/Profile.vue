@@ -5,7 +5,7 @@
             <div class="flex-center">Hi {{ user.name }}</div>
         </div>
         <div class="justify left">
-            <address-form v-model="user.address || {}"></address-form>
+            <address-form :user="user.id" v-model="user.address || {}"></address-form>
         </div>
     </div>
 

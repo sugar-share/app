@@ -1,7 +1,7 @@
 <template>
     <div>
-        <sugar-input v-model="value.city"><template slot="label">City</template></sugar-input>
-        <sugar-input v-model="value.postal_code"><template slot="label">Postal Code</template></sugar-input>
+        <sugar-input @input="change" :name="'city'" v-model="value.city"><template slot="label">City</template></sugar-input>
+        <sugar-input @input="change" :name="'postal_code'" v-model="value.postal_code"><template slot="label">Postal Code</template></sugar-input>
     </div>
 </template>
 
@@ -14,6 +14,19 @@
                 default: () => {
                     return {};
                 }
+            },
+            user: Number
+        },
+        methods: {
+            change(event) {
+                this.value[event.name] = event.value;
+                this.save();
+            },
+            save() {
+                window.axios.post(
+                    '/api/user/' + this.user + '/address/',
+                    this.value
+                )
             }
         },
         components: {
