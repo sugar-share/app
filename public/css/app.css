@@ -10652,6 +10652,7 @@ body {
   font-weight: 200;
   height: 100vh;
   margin: 0;
+  padding-top: 1rem;
 }
 
 .full-height {
@@ -10669,9 +10670,7 @@ body {
 }
 
 .top-right {
-  position: absolute;
-  right: 10px;
-  top: 18px;
+  text-align: left;
 }
 
 .content {
@@ -10685,7 +10684,6 @@ body {
 
 .container {
   text-align: center;
-  padding: 3rem;
 }
 
 hr {

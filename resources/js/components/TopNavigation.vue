@@ -1,13 +1,16 @@
 <template>
-    <div class="top-right links" v-on:logged-in="logIn">
-        <template v-if="!user.id">
-            <a href="#" @click="showRegistration">Start Sharing</a>
-            <a href="#" @click="showLogin">Keep Sharing</a>
-        </template>
-        <template v-else>
-            <a href="/share/">Share</a>
-            <a :href="'/profile/' + user.id">{{ user.name }}</a>
-        </template>
+    <div class="top-right" v-on:logged-in="logIn">
+        <img src="/img/sugarshare.png" alt="Sugar Share">
+        <div class="links float-right">
+            <template v-if="!user.id">
+                <a href="#" @click="showRegistration">Start Sharing</a>
+                <a href="#" @click="showLogin">Keep Sharing</a>
+            </template>
+            <template v-else>
+                <a href="/share/">Share</a>
+                <a :href="'/profile/' + user.id">{{ user.name }}</a>
+            </template>
+        </div>
         <modals-container v-on:logged-in="logIn"></modals-container>
     </div>
 </template>
@@ -62,6 +65,8 @@
 </script>
 
 <style scoped>
-
+    .links {
+        display: inline-block;
+    }
 </style>
 

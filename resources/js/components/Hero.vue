@@ -1,7 +1,7 @@
 <template>
     <div class="hero">
         <div class="title m-b-md">
-            Sugar Share
+            Buy <span class="separator">or</span> Share <span class="separator">or</span> Trade
         </div>
         <div>
             Share your pantry with your neighbors.
@@ -19,7 +19,8 @@
 </script>
 
 <style scoped>
-div.hero {
-    padding-bottom: 5rem;
-}
+    span.separator {
+        font-size: 0.5em;
+        vertical-align: middle;
+    }
 </style>
