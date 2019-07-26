@@ -1,6 +1,6 @@
 <template>
     <div class="top-right" v-on:logged-in="logIn">
-        <img src="/img/sugarshare.png" alt="Sugar Share">
+        <a href="/"><img src="/img/sugarshare.png" alt="Sugar Share"></a>
         <div class="links float-right">
             <template v-if="!user.id">
                 <a href="#" @click="showRegistration">Start Sharing</a>

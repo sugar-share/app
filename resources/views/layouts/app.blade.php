@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-    <link rel="icon" type="image/png" href="/img/favicon.png" />
+    <link rel="icon" type="image/png" href="/img/favicon.png"/>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -25,7 +25,9 @@
 <div>
     <main class="container" id="app">
         <top-navigation :initial-user="{{ auth()->user() ?? 'undefined' }}"></top-navigation>
-        @yield('content')
+        <div class="position-ref full-height">
+            @yield('content')
+        </div>
     </main>
 </div>
 </body>

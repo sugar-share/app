@@ -1,7 +1,10 @@
 <template>
     <div class="sugar input">
-        <label><slot name="label"></slot>
-            <input @blur="$emit('input', {name: $event.target.name, value: $event.target.value})" :name="name" :value="value" />
+        <label>
+            <slot name="label"></slot>
+            <slot name="input">
+                <input @blur="$emit('input', {name: $event.target.name, value: $event.target.value})" :name="name" :value="value" />
+            </slot>
         </label>
     </div>
 </template>
