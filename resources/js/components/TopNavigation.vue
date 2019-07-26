@@ -1,5 +1,6 @@
 <template>
     <div class="top-right" v-on:logged-in="logIn">
+        <modals-container></modals-container>
         <a href="/"><img src="/img/sugarshare.png" alt="Sugar Share"><br><img src="/img/spoon.png" alt="Sugar Share Spoon"></a>
         <div class="links float-right">
             <a href="/browse">Browse</a>
@@ -12,7 +13,6 @@
                 <a :href="'/profile/' + user.id">{{ user.name }}</a>
             </template>
         </div>
-        <modals-container></modals-container>
     </div>
 </template>
 
@@ -59,6 +59,7 @@
                 )
             },
             logIn(event) {
+                console.log('log in', event);
                 this.user = event;
             }
         }
