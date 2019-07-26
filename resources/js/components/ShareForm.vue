@@ -2,10 +2,10 @@
     <div>
         <div class="title">Post Your Food</div>
         <div class="form-group">
-            <div class="row">
-                <label class="col" for="item_photo">Upload an Image</label>
-                <input type="file" class="form-control-file col" id="item_photo">
-            </div>
+<!--            <div class="row">-->
+<!--                <label class="col" for="item_photo">Upload an Image</label>-->
+<!--                <input type="file" class="form-control-file col" id="item_photo">-->
+<!--            </div>-->
 
             <div class="row">
                 <label class="col" for="description">Enter a Description of Product</label>
@@ -14,9 +14,12 @@
             <!--            <label>Condition: <select v-if="conditions.length" v-model="item.condition">-->
             <!--                <option v-for="condition in conditions" :value="condition.id">{{ condition.name }}</option>-->
             <!--            </select><i v-else class="fas fa-circle-notch fa-spin"></i></label>-->
-            <!--            <sugar-input v-model="item.category">-->
-            <!--                <template slot="label">Category</template>-->
-            <!--            </sugar-input>-->
+            <div class="row">
+                <label class="col" for="category">Please Choose a Category</label>
+                <select class="col" v-model="item.category" name="category" id="category">
+                    <option v-for="category in categories" :value="category.id">{{ category.name }}</option>
+                </select>
+            </div>
             <div class="row">
                 <label class="col" for="price">Choose Your Price</label>
                 <div class="col" style="text-align: left;">
@@ -44,13 +47,17 @@
         data() {
             return {
                 item: {},
-                conditions: []
+                conditions: [],
+                categories: [],
             }
         },
         mounted() {
             window.axios.get('/api/conditions').then((response) => {
                 this.conditions = response.data;
                 this.item.condition = this.conditions[0].id;
+            });
+            window.axios.get('/api/categories').then((response) => {
+                this.categories = response.data;
             });
         },
         methods: {

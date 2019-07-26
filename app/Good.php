@@ -25,4 +25,9 @@ class Good extends Model
     {
         return $this->belongsTo(Condition::class);
     }
+
+    public function category(): BelongsTo
+    {
+        return $this->belongsTo(Category::class);
+    }
 }

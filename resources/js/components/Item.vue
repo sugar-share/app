@@ -4,6 +4,7 @@
         <div class="card-body">
             <h5 class="card-title">{{ item.description }}</h5>
             <div class="card-text">
+                <i :class="'fas ' + item.category.icon + ' fa-9x'"></i>
                 <!--                <div>Condition {{ item.condition.name }}</div>-->
                 <div v-if="!claimed">
                     <div v-if="item.price" class="float-right small">
