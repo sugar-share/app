@@ -1,11 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="flex-center">
+    <div class="flex-center" style="padding-top: 3rem;">
         <form method="POST">
             @csrf
-            <div>
-                Hey, wanna hear more? Awesome.
+            <div style="font-size: large; padding-bottom: 1.5rem;">
+                Hey, wanna hear more? Awesome.<br>
+                Join the SugarShare BETA Testers.
             </div>
             <div>
                 <label>Did you want to buy? <input type="checkbox" name="buy"></label>
@@ -17,7 +18,7 @@
                 <label>Did you want to give? <input type="checkbox" name="give"></label>
             </div>
             <div>
-                <label>How can we get in touch to help? <input type="email" name="email"></label>
+                <label>Give us your email and we'll get in touch: <input type="email" name="email"></label>
             </div>
             <div>
                 <button class="btn" type="submit">We'll Let You Know</button>
