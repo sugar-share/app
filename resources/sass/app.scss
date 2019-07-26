@@ -41,10 +41,11 @@ html, body {
 }
 
 .btn {
-    border: 1px solid black;
     -webkit-border-radius: 0.25rem;
     -moz-border-radius: 0.25rem;
     border-radius: 0.25rem;
+    background-color: $ss-orange;
+    color: white;
 }
 
 .container {
@@ -53,14 +54,16 @@ html, body {
 
 hr {
     width: 75%;
+    color: $ss-orange;
 }
 
 .title {
     font-size: 84px;
+    color: $ss-red;
 }
 
 .links > a {
-    color: #636b6f;
+    color: $ss-orange;
     padding: 0 25px;
     font-size: 13px;
     font-weight: 600;
@@ -71,4 +74,14 @@ hr {
 
 .m-b-md {
     margin-bottom: 30px;
+}
+
+span.separator {
+    color: $ss-orange;
+}
+
+div.horizontal-separator {
+    border-bottom: solid 1px $ss-orange;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
 }

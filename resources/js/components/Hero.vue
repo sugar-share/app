@@ -1,7 +1,7 @@
 <template>
     <div class="hero">
         <div class="title m-b-md">
-            Buy <span class="separator">or</span> Share <span class="separator">or</span> Trade
+            BUY <span class="separator">|</span> SELL <span class="separator">|</span> SHARE
         </div>
         <div>
             Share your pantry with your neighbors.
@@ -19,8 +19,4 @@
 </script>
 
 <style scoped>
-    span.separator {
-        font-size: 0.5em;
-        vertical-align: middle;
-    }
 </style>

@@ -12,7 +12,7 @@
                 <a :href="'/profile/' + user.id">{{ user.name }}</a>
             </template>
         </div>
-        <modals-container v-on:logged-in="logIn"></modals-container>
+        <modals-container></modals-container>
     </div>
 </template>
 

@@ -26,7 +26,7 @@
 
             </div>
             <div class="row">
-                <label for="trades" class="col">Will Accepts Trades </label>
+                <label for="trades" class="col">Will Accept Trades </label>
                 <input id="trades" class="col" type="checkbox" v-model="item.will_trade">
             </div>
             <div>

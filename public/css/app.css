@@ -10679,8 +10679,9 @@ body {
 }
 
 .btn {
-  border: 1px solid black;
   border-radius: 0.25rem;
+  background-color: #eda848;
+  color: white;
 }
 
 .container {
@@ -10689,14 +10690,16 @@ body {
 
 hr {
   width: 75%;
+  color: #eda848;
 }
 
 .title {
   font-size: 84px;
+  color: #dc3f36;
 }
 
 .links > a {
-  color: #636b6f;
+  color: #eda848;
   padding: 0 25px;
   font-size: 13px;
   font-weight: 600;
@@ -10707,5 +10710,15 @@ hr {
 
 .m-b-md {
   margin-bottom: 30px;
+}
+
+span.separator {
+  color: #eda848;
+}
+
+div.horizontal-separator {
+  border-bottom: solid 1px #eda848;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 

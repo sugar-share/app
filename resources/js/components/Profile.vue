@@ -47,10 +47,4 @@
     div.justify.left {
         text-align: left;
     }
-
-    div.horizontal-separator {
-        border-bottom: solid 1px dimgrey;
-        padding-bottom: 1rem;
-        margin-bottom: 1rem;
-    }
 </style>
