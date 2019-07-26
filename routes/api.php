@@ -23,3 +23,4 @@ Route::get('/conditions/', 'Api\ConditionController@index');
 Route::get('/goods/', 'Api\GoodsController@index');
 
 Route::post('/goods/', 'Api\GoodsController@create');
+Route::post('/user/{user}/address/', 'Api\AddressController@create');

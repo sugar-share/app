@@ -20,7 +20,7 @@
         methods: {
             change(event) {
                 this.value[event.name] = event.value;
-                this.save();
+                this.save(); // TODO This needs to be debounced on the client side.
             },
             save() {
                 window.axios.post(
