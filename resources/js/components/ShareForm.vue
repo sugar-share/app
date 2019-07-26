@@ -9,7 +9,7 @@
 
             <div class="row">
                 <label class="col" for="description">Enter a Description of Product</label>
-                <textarea class="col" name="description" id="description"></textarea>
+                <textarea class="col" name="description" v-model="item.description" id="description"></textarea>
             </div>
             <!--            <label>Condition: <select v-if="conditions.length" v-model="item.condition">-->
             <!--                <option v-for="condition in conditions" :value="condition.id">{{ condition.name }}</option>-->
