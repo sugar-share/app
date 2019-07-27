@@ -8,7 +8,7 @@
                 <!--                <div>Condition {{ item.condition.name }}</div>-->
                 <div v-if="!claimed">
                     <div v-if="item.price" class="float-right small">
-                        <i class="fas fa-comment-dollar"></i> {{ item.price }}
+                        <i class="fas fa-comment-dollar"></i> {{ item.price | toUSD }}
                     </div>
                     <div v-if="item.will_trade" class="float-right small">
                         <i class="fas fa-comment-dots"></i> Trade
@@ -33,8 +33,6 @@
 </template>
 
 <script>
-    // import Claimed from "./modals/ClaimedModal";
-
     export default {
         name: "Item",
         props: {
@@ -52,19 +50,13 @@
         },
         methods: {
             claim() {
-                // this.$modal.show(
-                //     Claimed,
-                //     {
-                //         owner: this.item.user,
-                //     },
-                //     {
-                //         adaptive: true,
-                //         height: 'auto',
-                //         clickToClose: false,
-                //     }
-                // );
                 this.claimed = true;
                 this.$emit('claim', this.item)
+            }
+        },
+        filters: {
+            toUSD(value) {
+                return `$${Number.parseFloat(value).toFixed(2).toLocaleString()}`
             }
         }
     }

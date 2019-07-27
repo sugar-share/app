@@ -65,8 +65,8 @@
                 window.axios.post(
                     '/goods/',
                     this.item
-                ).then((response) => {
-                    window.location = '/home';
+                ).then(() => {
+                    window.location = '/browse';
                 });
             }
         },
