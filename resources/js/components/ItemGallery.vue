@@ -51,7 +51,10 @@
                     '/claims/',
                     event
                 ).then(() => {
-                    window.setTimeout(this.refreshItems, 1000);
+                    window.setTimeout(() => {
+                        this.items = [];
+                        this.refreshItems();
+                    }, 1000);
                 });
             },
             refreshItems() {

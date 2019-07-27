@@ -4,7 +4,7 @@
             BUY <span class="separator">|</span> SELL <span class="separator">|</span> SHARE
         </div>
         <div class="horizontal-separator">
-            We throw away more than 30% of all food. With SugarShare neighbors buy, sell and share food.
+            We throw away more than 30% of all food. With SugarShare, neighbors buy, sell and share food.
         </div>
         <div class="horizontal-separator">
             <img src="/img/triangle.png" alt="Triangle of SugarShare">
@@ -15,7 +15,7 @@
                 Have to travel suddenly and those avocados you bought are going to be toast?
             </div>
             <div>
-                Before that avocado is toast, Share it on SugarShare.
+                Share it on SugarShare.
             </div>
             <div class="clearfix"></div>
         </div>
@@ -25,7 +25,7 @@
                 Didn’t like those new energy drinks but you have five left?
             </div>
             <div>
-                Got energy drinks in your pantry to spare? Sell them on Sugar Share!
+                Sell them on SugarShare!
             </div>
             <div class="clearfix"></div>
         </div>
@@ -35,7 +35,7 @@
                 Need some sugar to finish the cookies you promised your best friend?
             </div>
             <div>
-                Need some powdered sugar to make frosting for your kids birthday cake? Buy it on Sugar Share!
+                Buy it on SugarShare!
             </div>
             <div class="clearfix"></div>
         </div>

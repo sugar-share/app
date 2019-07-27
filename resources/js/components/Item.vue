@@ -2,10 +2,16 @@
     <div class="card" style="width: 18rem;">
         <!--        <img src="" class="card-img-top" alt="">-->
         <div class="card-body">
-            <h5 class="card-title">{{ item.description }}</h5>
-            <div ref="card-text" class="card-text">
+            <h5 v-if="!claimed" class="card-title">{{ item.description }}</h5>
+            <h5 v-else class="card-title">
+                    <span style="color: rgb(220, 63, 54);">Claimed!</span><br>
+                    <!-- TODO Get the Email from the API response, don't send them all to clientside. -->
+                    <!--   This holds true of all models returned to the client, they leak data. -->
+                    Look for an email from {{ item.user.name }} to start arranging for delivery.
+            </h5>
+            <div ref="card-text" class="card-text" v-if="!claimed">
                 <img class="item image" :src="'http://lorempixel.com/200/200/food/' + index" alt="Item Photo">
-                <div class="indicators" v-if="!claimed">
+                <div class="indicators">
                     <template v-if="item.price">
                         <i class="fas fa-comment-dollar"></i> {{ item.price | toUSD }}
                     </template>
@@ -18,14 +24,6 @@
                     <template>
                         <i :class="'fas ' + item.category.icon"></i>
                     </template>
-                </div>
-                <div v-else>
-                    <div class="title">Claimed!</div>
-                    <div>
-                        <!-- TODO Get the Email from the API response, don't send them all to clientside. -->
-                        <!--   This holds true of all models returned to the client, they leak data. -->
-                        Look for an email from {{ item.user.name }} to start arranging for delivery.
-                    </div>
                 </div>
             </div>
         </div>
