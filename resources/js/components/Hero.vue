@@ -3,11 +3,41 @@
         <div class="title m-b-md">
             BUY <span class="separator">|</span> SELL <span class="separator">|</span> SHARE
         </div>
-        <div>
-            Share your pantry with your neighbors.
+        <div class="horizontal-separator">
+            We throw away more than 30% of all food. With SugarShare neighbors buy, sell and share food.
         </div>
-        <div>
-            "Excuse me, might I borrow a cup of sugar?"
+        <div class="horizontal-separator">
+            <img src="/img/triangle.png" alt="Triangle of SugarShare">
+        </div>
+        <div class="m-b-md">
+            <img class="float-left bullet" src="/img/advocado.png"/>
+            <div>
+                Have to travel suddenly and those avocados you bought are going to be toast?
+            </div>
+            <div>
+                Before that avocado is toast, Share it on SugarShare.
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="m-b-md">
+            <img class="float-left bullet" src="/img/soda.png" alt="soda can">
+            <div>
+                Didn’t like those new energy drinks but you have five left?
+            </div>
+            <div>
+                Got energy drinks in your pantry to spare? Sell them on Sugar Share!
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="m-b-md">
+            <img class="float-left bullet" src="/img/sugar.png" alt="sugar jar">
+            <div>
+                Need some sugar to finish the cookies you promised your best friend?
+            </div>
+            <div>
+                Need some powdered sugar to make frosting for your kids birthday cake? Buy it on Sugar Share!
+            </div>
+            <div class="clearfix"></div>
         </div>
     </div>
 </template>
@@ -19,4 +49,11 @@
 </script>
 
 <style scoped>
+    .hero {
+        font-size: x-large;
+    }
+
+    img.bullet {
+        padding-right: 2rem;
+    }
 </style>
