@@ -29,7 +29,7 @@
                 </div>
             </div>
         </div>
-        <div v-if="claim" @click="claim" class="card-footer" :style="'cursor: ' + cursor + ';'">
+        <div v-if="canClaim" @click="claim" class="card-footer" :style="'cursor: ' + cursor + ';'">
             Claim
         </div>
     </div>
@@ -46,7 +46,7 @@
                 }
             },
             index: Number,
-            claim: Boolean
+            canClaim: Boolean
         },
         data() {
             return {

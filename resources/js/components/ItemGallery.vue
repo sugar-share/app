@@ -14,7 +14,7 @@
         <div class="items row">
             <template v-for="(item, index) in items">
                 <div class="col">
-                    <item @claim="sendClaim" :claim="claims" :index="index + 1" :item="item"></item>
+                    <item @claim="sendClaim" :canClaim="claims" :index="index + 1" :item="item"></item>
                 </div>
             </template>
         </div>
