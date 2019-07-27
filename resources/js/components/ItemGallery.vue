@@ -14,7 +14,7 @@
         <div class="items row">
             <template v-for="(item, index) in items">
                 <div class="col">
-                    <item @claim="sendClaim" :index="index + 1" :item="item"></item>
+                    <item @claim="sendClaim" :claim="claims" :index="index + 1" :item="item"></item>
                 </div>
             </template>
         </div>
@@ -36,6 +36,9 @@
             window.axios.get('/api/categories').then((response) => {
                 this.categories = response.data;
             });
+        },
+        props: {
+            claims: Boolean
         },
         components: {
             'item': (resolve) => {

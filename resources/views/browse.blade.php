@@ -1,5 +1,5 @@
 @extends('layouts.app')
 
 @section('content')
-    <item-gallery></item-gallery>
+    <item-gallery :claims="{{ auth()->id() ? 'true' : 'false' }}"></item-gallery>
 @endsection
