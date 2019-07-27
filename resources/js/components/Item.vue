@@ -64,7 +64,7 @@
                 //     }
                 // );
                 this.claimed = true;
-                this.$emit('claim', )
+                this.$emit('claim', this.item)
             }
         }
     }

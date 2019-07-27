@@ -63,7 +63,7 @@
         methods: {
             share() {
                 window.axios.post(
-                    '/api/goods/',
+                    '/goods/',
                     this.item
                 ).then((response) => {
                     window.location = '/home';

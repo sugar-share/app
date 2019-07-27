@@ -4,6 +4,7 @@
 namespace App;
 
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
@@ -29,5 +30,15 @@ class Good extends Model
     public function category(): BelongsTo
     {
         return $this->belongsTo(Category::class);
+    }
+
+    public function claim(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function scopeUnclaimed(Builder $query): Builder
+    {
+        return $query->whereNull('claimed_by');
     }
 }

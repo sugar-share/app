@@ -36,8 +36,11 @@ Route::post('/landing/', static function (\Illuminate\Http\Request $request) {
 Route::post('register', 'Auth\RegisterController@register');
 Route::post('login', 'Auth\LoginController@login');
 Route::post('logout', 'Auth\LoginController@logout')->name('logout');
+Route::post('/goods/', 'GoodsController@create');
+Route::post('/claims/', 'ClaimsController@create');
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/profile/{user}', 'ProfileController@view');
 Route::get('/share/', 'ShareController@post');
 Route::get('/browse/', 'GalleryController@index');
+Route::get('/goods/', 'GoodsController@index');

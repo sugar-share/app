@@ -20,8 +20,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::get('/user/{user}', 'Api\UserController@read');
 Route::get('/conditions/', 'Api\ConditionController@index');
-Route::get('/goods/', 'Api\GoodsController@index');
 Route::get('/categories/', 'Api\CategoryController@index');
 
-Route::post('/goods/', 'Api\GoodsController@create');
 Route::post('/user/{user}/address/', 'Api\AddressController@create');
