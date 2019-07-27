@@ -23,7 +23,7 @@
             <div class="row">
                 <label class="col" for="price">Choose Your Price</label>
                 <div class="col" style="text-align: left;">
-                    <input id="price" name="price">
+                    <input id="price" v-model="item.price" name="price">
                     <label>or Set as Free: <input type="checkbox" v-model="item.free"></label>
                 </div>
 

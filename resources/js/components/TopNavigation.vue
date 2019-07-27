@@ -5,8 +5,8 @@
         <div class="links float-right">
             <a href="/browse">Browse</a>
             <template v-if="!user.id">
-                <a href="#" @click="showRegistration">Start Sharing</a>
-                <a href="#" @click="showLogin">Keep Sharing</a>
+                <a href="#" @click="showRegistration">Sign Up</a>
+                <a href="#" @click="showLogin">KLog In</a>
             </template>
             <template v-else>
                 <a href="/share/">Share</a>
