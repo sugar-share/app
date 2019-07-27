@@ -41,4 +41,11 @@ class Good extends Model
     {
         return $query->whereNull('claimed_by');
     }
+
+    public function scopeCategory(Builder $query, string $categoryId): Builder
+    {
+        return $query->whereHas('category', static function (Builder $query) use ($categoryId) {
+            $query->where('id', $categoryId);
+        });
+    }
 }
