@@ -102,4 +102,8 @@
     .card-text > img {
         max-height: 200px;
     }
+
+    .item.image {
+        min-height: 200px;
+    }
 </style>
