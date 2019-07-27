@@ -1,15 +1,15 @@
 <template>
     <div class="modal content">
         <div class="header">
-            Keep Sharing
+            Log In
         </div>
         <div class="body">
-            <label>Email: <input v-model="email"/></label>
-            <label>Password: <input type="password" v-model="password"/></label>
+            <label>Email: <input class="form-control" v-model="email"/></label>
+            <label>Password: <input class="form-control" type="password" v-model="password"/></label>
         </div>
         <div class="footer">
             <div class="cancel button" @click="$emit('close')">Cancel</div>
-            <div class="confirm button" @click="login">Keep Sharing</div>
+            <div class="confirm button" @click="login">Log In</div>
         </div>
     </div>
 </template>
@@ -33,7 +33,8 @@
                     password: this.password
                 }).then((response) => {
                     if (response.data.user) {
-                        this.$emit('logged-in', response.data.user)
+                        this.$emit('logged-in', response.data.user);
+                        window.location = '/browse';
                     } else {
                         console.error(response);
                     }
@@ -65,6 +66,7 @@
     .modal .footer {
         display: flex;
         justify-content: space-around;
+        cursor: pointer;
     }
 
     .button {

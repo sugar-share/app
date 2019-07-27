@@ -2,35 +2,36 @@
     <div>
         <div class="title">Post Your Food</div>
         <div class="form-group">
-<!--            <div class="row">-->
-<!--                <label class="col" for="item_photo">Upload an Image</label>-->
-<!--                <input type="file" class="form-control-file col" id="item_photo">-->
-<!--            </div>-->
+            <!--            <div class="row">-->
+            <!--                <label class="col" for="item_photo">Upload an Image</label>-->
+            <!--                <input type="file" class="form-control-file col" id="item_photo">-->
+            <!--            </div>-->
 
             <div class="row">
                 <label class="col" for="description">Enter a Description of Product</label>
-                <textarea class="col" name="description" v-model="item.description" id="description"></textarea>
+                <textarea placeholder="Maximum 250 Characters" maxlength="250" class="col form-control" name="description"
+                          v-model="item.description" id="description"></textarea>
             </div>
             <!--            <label>Condition: <select v-if="conditions.length" v-model="item.condition">-->
             <!--                <option v-for="condition in conditions" :value="condition.id">{{ condition.name }}</option>-->
             <!--            </select><i v-else class="fas fa-circle-notch fa-spin"></i></label>-->
             <div class="row">
                 <label class="col" for="category">Please Choose a Category</label>
-                <select class="col" v-model="item.category" name="category" id="category">
+                <select class="col form-control" v-model="item.category" name="category" id="category">
                     <option v-for="category in categories" :value="category.id">{{ category.name }}</option>
                 </select>
             </div>
             <div class="row">
                 <label class="col" for="price">Choose Your Price</label>
                 <div class="col" style="text-align: left;">
-                    <input id="price" v-model="item.price" name="price">
+                    <input class="form-control" id="price" v-model="item.price" name="price">
                     <label>or Set as Free: <input type="checkbox" v-model="item.free"></label>
                 </div>
 
             </div>
             <div class="row">
                 <label for="trades" class="col">Will Accept Trades </label>
-                <input id="trades" class="col" type="checkbox" v-model="item.will_trade">
+                <input id="trades" class="col form-control" type="checkbox" v-model="item.will_trade">
             </div>
             <div>
                 <button class="btn" @click="share">Share</button>

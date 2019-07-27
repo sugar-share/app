@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="horizontal-separator">
-            <div><i class="block fas fa-user fa-9x flex-center"></i></div>
+            <div><img class="circular" src="http://placebeard.it/200" alt="Profile Image"></div>
             <div class="flex-center">Hi {{ user.name }}</div>
             <div><button class="btn" @click="logOut">Log Out</button></div>
         </div>
@@ -54,5 +54,9 @@
 
     div.justify.left {
         text-align: left;
+    }
+
+    .circular {
+        border-radius: 50%;
     }
 </style>

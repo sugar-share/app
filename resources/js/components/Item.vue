@@ -3,30 +3,33 @@
         <!--        <img src="" class="card-img-top" alt="">-->
         <div class="card-body">
             <h5 class="card-title">{{ item.description }}</h5>
-            <div class="card-text">
-                <i :class="'fas ' + item.category.icon + ' fa-9x'"></i>
-                <!--                <div>Condition {{ item.condition.name }}</div>-->
-                <div v-if="!claimed">
-                    <div v-if="item.price" class="float-right small">
+            <div ref="card-text" class="card-text">
+                <img class="item image" :src="'http://lorempixel.com/200/200/food/' + index" alt="Item Photo">
+                <div class="indicators" v-if="!claimed">
+                    <template v-if="item.price">
                         <i class="fas fa-comment-dollar"></i> {{ item.price | toUSD }}
-                    </div>
-                    <div v-if="item.will_trade" class="float-right small">
+                    </template>
+                    <template v-if="item.will_trade">
                         <i class="fas fa-comment-dots"></i> Trade
-                    </div>
-                    <div v-if="item.free" class="float-right small">
+                    </template>
+                    <template v-if="item.free">
                         <i class="fas fa-comment"></i> Free
-                    </div>
+                    </template>
+                    <template>
+                        <i :class="'fas ' + item.category.icon"></i>
+                    </template>
                 </div>
                 <div v-else>
                     <div class="title">Claimed!</div>
                     <div>
                         <!-- TODO Get the Email from the API response, don't send them all to clientside. -->
+                        <!--   This holds true of all models returned to the client, they leak data. -->
                         Look for an email from {{ item.user.name }} to start arranging for delivery.
                     </div>
                 </div>
             </div>
         </div>
-        <div @click="claim" class="card-footer">
+        <div @click="claim" class="card-footer" :style="'cursor: ' + cursor + ';'">
             Claim
         </div>
     </div>
@@ -41,17 +44,26 @@
                 default: () => {
                     return {};
                 }
-            }
+            },
+            index: Number
         },
         data() {
             return {
-                claimed: false
+                claimed: false,
+                loaded: false
             }
         },
         methods: {
             claim() {
-                this.claimed = true;
-                this.$emit('claim', this.item)
+                if (!this.claimed) {
+                    this.claimed = true;
+                    this.$emit('claim', this.item)
+                }
+            }
+        },
+        computed: {
+            cursor() {
+                return this.claimed ? 'no-drop' : 'pointer';
             }
         },
         filters: {
@@ -75,10 +87,19 @@
     .card-footer {
         background-color: rgb(237, 168, 72);
         color: white;
-        cursor: pointer;
     }
 
     .title {
         font-size: medium;
+    }
+
+    .card-title {
+        height: 100px;
+        overflow-y: scroll;
+        scroll-behavior: auto;
+    }
+
+    .card-text > img {
+        max-height: 200px;
     }
 </style>

@@ -3,7 +3,8 @@
         <div>
             <label>
                 Narrow Your Search
-                <select @change="refreshItems" v-model="search">
+                <select class="form-control" @change="refreshItems" v-model="search">
+                    <option value="">All</option>
                     <option v-for="category in categories" :value="category.id">
                         {{ category.name }}
                     </option>
@@ -11,9 +12,9 @@
             </label>
         </div>
         <div class="items row">
-            <template v-for="item in items">
+            <template v-for="(item, index) in items">
                 <div class="col">
-                    <item @claim="sendClaim" :item="item"></item>
+                    <item @claim="sendClaim" :index="index + 1" :item="item"></item>
                 </div>
             </template>
         </div>
@@ -57,7 +58,6 @@
                     query += '?category=' + this.search;
                 }
                 window.axios.get(query).then((response) => {
-                    console.log(response);
                     this.items = response.data.data;
                 });
             }

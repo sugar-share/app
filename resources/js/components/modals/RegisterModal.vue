@@ -1,16 +1,16 @@
 <template>
     <div class="modal content">
         <div class="header">
-            Start Sharing
+            Sign Up
         </div>
         <div class="body">
-            <label>Name: <input v-model="name"></label>
-            <label>Email: <input v-model="email"/></label>
-            <label>Password: <input placeholder="Must be 8 characters" type="password" v-model="password"/></label>
+            <label>Name: <input class="form-control" v-model="name"></label>
+            <label>Email: <input class="form-control" v-model="email"/></label>
+            <label>Password: <input class="form-control" placeholder="Must be 8 characters" type="password" v-model="password"/></label>
         </div>
         <div class="footer">
             <div class="cancel button" @click="$emit('close')">Cancel</div>
-            <div class="confirm button" @click="register">Start Sharing</div>
+            <div class="confirm button" @click="register">Sign Up</div>
         </div>
     </div>
 </template>
@@ -72,6 +72,7 @@
     .modal .footer {
         display: flex;
         justify-content: space-around;
+        cursor: pointer;
     }
 
     .button {

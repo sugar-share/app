@@ -3,7 +3,7 @@
         <label>
             <slot name="label"></slot>
             <slot name="input">
-                <input @blur="$emit('input', {name: $event.target.name, value: $event.target.value})" :name="name" :value="value" />
+                <input class="form-control" @input="$emit('input', {name: $event.target.name, value: $event.target.value})" :name="name" :value="value" />
             </slot>
         </label>
     </div>
