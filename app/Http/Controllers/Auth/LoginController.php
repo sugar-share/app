@@ -45,4 +45,12 @@ class LoginController extends Controller
                 'user' => $user]
         );
     }
+
+    public function logout(Request $request)
+    {
+        $this->guard()->logout();
+        $request->session()->invalidate();
+
+        return redirect('/');
+    }
 }

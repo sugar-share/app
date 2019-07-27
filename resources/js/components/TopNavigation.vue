@@ -6,7 +6,7 @@
             <a href="/browse">Browse</a>
             <template v-if="!user.id">
                 <a href="#" @click="showRegistration">Sign Up</a>
-                <a href="#" @click="showLogin">KLog In</a>
+                <a href="#" @click="showLogin">Log In</a>
             </template>
             <template v-else>
                 <a href="/share/">Share</a>
