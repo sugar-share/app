@@ -29,8 +29,8 @@ class ItemRequested extends Mailable
         return $this->view(
             'emails.claim',
             [
-                'owner' => $this->good->user(),
-                'taker' => $this->good->claim(),
+                'owner' => $this->good->user,
+                'taker' => $this->good->claim,
                 'good' => $this->good->description,
             ]
         );
